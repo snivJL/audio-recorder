@@ -8,12 +8,12 @@ let recorder = null;
 const main = async () => {
   try {
     let stream = await navigator.mediaDevices.getUserMedia({ audio: true }); // we only need audio
+    recorder = new MediaRecorder(stream);
+    recorder.ondataavailable = saveCurrentRecording;
+    recorder.onstop = sendToMediaPlayer;
   } catch (error) {
     console.log(error);
   }
-  recorder = new MediaRecorder(stream);
-  recorder.ondataavailable = saveCurrentRecording;
-  recorder.onstop = sendToMediaPlayer;
 };
 
 const saveCurrentRecording = (event) => {
