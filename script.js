@@ -6,7 +6,11 @@ let chunks = [];
 let recorder = null;
 
 const main = async () => {
-  let stream = await navigator.mediaDevices.getUserMedia({ audio: true }); // we only need audio
+  try {
+    let stream = await navigator.mediaDevices.getUserMedia({ audio: true }); // we only need audio
+  } catch (error) {
+    console.log(error);
+  }
   recorder = new MediaRecorder(stream);
   recorder.ondataavailable = saveCurrentRecording;
   recorder.onstop = sendToMediaPlayer;
