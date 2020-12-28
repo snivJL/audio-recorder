@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 40%;
+  margin: 0 auto;
+  background-color: #cafafe;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px 0;
+  border-radius: 50px;
+}
+
+button {
+  background: none;
+  border: none;
+  color: white;
+  border-radius: 50%;
+  background: #97caef;
+  box-shadow: 0 1px 2px #55bcc9;
+  padding: 20px 20px;
+  width: 100px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+  line-height: 1.4rem;
+}
+button:hover {
+  border: 1px solid #55bcc9;
+}
+button:focus,
+audio:focus {
+  outline: none;
+}
+.red {
+  background-color: #fc4445;
+  color: white;
+  padding: 20px 5px;
+}
